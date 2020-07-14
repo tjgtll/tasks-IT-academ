@@ -7,9 +7,9 @@ namespace Dictionary
 {
     class Program
     {
+        //можно и метод использовать, по тогда реализовать continue сложно
         public static bool IsPrime(int n)
         {
-            //Единица вроде не простое?
             if (n <= 1) return false;
             if (n == 2) return true;
             if (n % 2 == 0) return false;
