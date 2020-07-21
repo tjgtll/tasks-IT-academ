@@ -145,7 +145,8 @@ public class Program
     public static void stringTask1(string s)
     {
         char[] vowels = { 'а', 'о', 'и', 'е', 'ё', 'э', 'ы', 'у', 'ю', 'я', 'А', 'О', 'И', 'Е', 'Ё', 'Э', 'Ы', 'У', 'Ю', 'Я' };
-        int i = s.Where(l => vowels.Contains(l)).Count();
+        //int i = s.Where(l => vowels.Contains(l)).Count();
+        int i = s.Count(l => vowels.Contains(l))
         if (i == 0) Console.WriteLine("Гласные буквы не обнаружены");
         else
         Console.WriteLine($"Количество гласных {i}");
