@@ -17,7 +17,7 @@ namespace ConsoleApp28
         {
             while (true)
             {
-                Console.WriteLine("\n1 - Добавить студента\n2 - Выдать кофе студентам\n3 - Выход"); 
+                Console.WriteLine("\n1 - Добавить студента\n2 - Выдать кофе студенту\n3 - Выход"); 
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.D1:
@@ -28,10 +28,9 @@ namespace ConsoleApp28
                     case ConsoleKey.D2:
 
                         Console.WriteLine();
-                        while (studens.Count != 0)
-                        {
+                        if (studens.Count != 0)
                             Console.WriteLine($"{studens.Pop()} получил крушку кофе");
-                        }
+                        else Console.WriteLine("Стундентов нет");
                         break;
 
                     case ConsoleKey.D3:
@@ -44,7 +43,7 @@ namespace ConsoleApp28
         {
             while (true)
             {
-                Console.WriteLine("\n1 - Добавить студента\n2 - Выдать кофе студентам\n3 - Выход"); 
+                Console.WriteLine("\n1 - Добавить студента\n2 - Выдать кофе студенту\n3 - Выход"); 
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.D1:
@@ -55,10 +54,9 @@ namespace ConsoleApp28
                     case ConsoleKey.D2:
 
                         Console.WriteLine();
-                        while (studens.Count != 0)
-                        {
+                        if (studens.Count != 0)
                             Console.WriteLine($"{studens.Dequeue()} получил крушку кофе");
-                        }
+                        else Console.WriteLine("Стундентов нет");
                         break;
 
                     case ConsoleKey.D3:
@@ -71,11 +69,11 @@ namespace ConsoleApp28
         {
             while (true)
             {
-                Console.WriteLine("\n1 - Добавить студента\n2 - Выдать кофе студентам\n3 - Выход");
+                Console.WriteLine("\n1 - Добавить студента\n2 - Выдать кофе студенту\n3 - Выход");
                 switch (Console.ReadKey().Key)
                 {
                     case ConsoleKey.D1:
-                        Console.WriteLine("\nВведите стундента"); 
+                        Console.WriteLine("\nВведите стундента");
                         string value = Console.ReadLine();
 
                         Console.WriteLine("Введите приоритет студента");
@@ -94,13 +92,14 @@ namespace ConsoleApp28
 
                     case ConsoleKey.D2:
                         Console.WriteLine();
-                        while (studens.Count != 0)
+                        if (studens.Count != 0)
                         {
                             var itemToRemove = studens.OrderBy(r => -r.Key).First();
                             Console.WriteLine($"{itemToRemove.Value} получил крушку кофе");
 
                             studens.Remove(itemToRemove);
                         }
+                        else Console.WriteLine("Стундентов нет");
                         break;
 
                     case ConsoleKey.D3:
@@ -115,7 +114,7 @@ namespace ConsoleApp28
             Queue<string> studensQ = new Queue<string>();
             List<MyQueue> ListQueue = new List<MyQueue>();
 
-            while(true)
+            while (true)
             {
                 Console.WriteLine("\n1 - Stack\n2 - Queue\n3 - MyQueue\nq - Выход");
                 switch (Console.ReadKey().Key)
