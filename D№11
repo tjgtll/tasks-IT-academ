@@ -4,7 +4,7 @@ namespace hw11
 {
     class Student : Person
     {
-        //место проживания
+        //РјРµСЃС‚Рѕ РїСЂРѕР¶РёРІР°РЅРёСЏ
         public string PlaceOfResidence;
 
         public Student(string FirstName, string LastName, string Surname, string Department, string PlaceOfResidence) : base(FirstName, LastName, Surname, Department)
@@ -14,12 +14,12 @@ namespace hw11
 
         public override void Work()
         {
-            Console.Write("Студент: ");
+            Console.Write("РЎС‚СѓРґРµРЅС‚: ");
             base.Work();
-            Console.WriteLine($"Место проживания: {PlaceOfResidence}");
-
+            Console.WriteLine($"РњРµСЃС‚Рѕ РїСЂРѕР¶РёРІР°РЅРёСЏ: {PlaceOfResidence}");
+            
         }
-
+       
     }
 
     class Teacher : Person
@@ -33,10 +33,10 @@ namespace hw11
 
         public override void Work()
         {
-            Console.Write("Преподаватель: ");
+            Console.Write("РџСЂРµРїРѕРґР°РІР°С‚РµР»СЊ: ");
             base.Work();
-            Console.WriteLine($"Учебный предмет: {Subject}");
-
+            Console.WriteLine($"РЈС‡РµР±РЅС‹Р№ РїСЂРµРґРјРµС‚: {Subject}");
+           
         }
     }
 
@@ -58,7 +58,7 @@ namespace hw11
         virtual public void Work()
         {
             Console.WriteLine($"{FirstName} {LastName} {Surname}");
-            Console.WriteLine($"Факультет: {Department}");
+            Console.WriteLine($"Р¤Р°РєСѓР»СЊС‚РµС‚: {Department}");
         }
 
         public override bool Equals(object obj)
@@ -80,9 +80,9 @@ namespace hw11
 
         public override void Work()
         {
-            Console.Write($"Заведующий кафедрой {Department} ");
+            Console.Write($"Р—Р°РІРµРґСѓСЋС‰РёР№ РєР°С„РµРґСЂРѕР№ {Department} ");
             Console.WriteLine($"{FirstName} {LastName} {Surname}");
-            Console.WriteLine($"Учебный предмет: {Subject}");
+            Console.WriteLine($"РЈС‡РµР±РЅС‹Р№ РїСЂРµРґРјРµС‚: {Subject}");
         }
     }
 
@@ -90,20 +90,20 @@ namespace hw11
     {
         static void Main(string[] args)
         {
-            Student ob1 = new Student("Володин", "Николай", "Юрьевич", "ПОИТ", "Общежитие, к.201");
+            Student ob1 = new Student("Р’РѕР»РѕРґРёРЅ", "РќРёРєРѕР»Р°Р№", "Р®СЂСЊРµРІРёС‡", "РџРћРРў", "РћР±С‰РµР¶РёС‚РёРµ, Рє.201");
             ob1.Work();
             Console.WriteLine();
-            Student ob2 = new Student("Перевозчиков", "Николай", "Юрьевич", "ПОИТ", "Общежитие, к.201");
+            Student ob2 = new Student("РџРµСЂРµРІРѕР·С‡РёРєРѕРІ", "РќРёРєРѕР»Р°Р№", "Р®СЂСЊРµРІРёС‡", "РџРћРРў", "РћР±С‰РµР¶РёС‚РёРµ, Рє.201");
             ob2.Work();
 
 
             Console.WriteLine(ob1.Equals(ob2));
             Console.WriteLine(ob1.Equals(ob1));
 
-            Teacher ob3 = new Teacher("Цыганок", "Ольга", "Чеславовна", "ПОИТ", "СП");
+            Teacher ob3 = new Teacher("Р¦С‹РіР°РЅРѕРє", "РћР»СЊРіР°", "Р§РµСЃР»Р°РІРѕРІРЅР°", "РџРћРРў", "РЎРџ");
             ob2.Work();
             Console.WriteLine();
-            HeadOfDepartment ob4 = new HeadOfDepartment("Зенько", "Зоя", "Владимировна ", "ПОИТ", "ЭВМ");
+            HeadOfDepartment ob4 = new HeadOfDepartment("Р—РµРЅСЊРєРѕ", "Р—РѕСЏ", "Р’Р»Р°РґРёРјРёСЂРѕРІРЅР° ", "РџРћРРў", "Р­Р’Рњ");
             ob3.Work();
             Console.WriteLine();
         }
