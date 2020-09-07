@@ -5,37 +5,34 @@ namespace console
 {
     class Program
     {
-        private static void Quicksort<T>(T[] array, int left, int right) where T : IComparable<T>
+        static void quicksort<T>(T[] arr, int min, int max) where T : IComparable<T>
         {
-            int i = left;
-            int j = right;
 
-            var pivot = array[left + (right - left) / 2];
+            if (min >= max) return;
 
-            while (i <= j)
+            int i = min;
+            int j = max;
+            var p = arr[(min + max) / 2];
+
+           
+            while (i < j)
             {
-                while (array[i].CompareTo(pivot) < 0)
-                    i++;
-
-                while (array[j].CompareTo(pivot) > 0)
-                    j--;
-
+                while (arr[i].CompareTo(p) < 0) i++;
+                while (arr[j].CompareTo(p)  > 0) j--;
                 if (i <= j)
                 {
-                    var tmp = array[i];
-                    array[i] = array[j];
-                    array[j] = tmp;
-
+                    var buf = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = buf;
                     i++;
                     j--;
+
                 }
             }
 
-            if (left < j)
-                Quicksort(array, left, j);
+            quicksort(arr, min, j);
 
-            if (i < right)
-                Quicksort(array, i, right);
+            quicksort(arr, i, max);
         }
 
         static void Main(string[] args)
@@ -46,9 +43,9 @@ namespace console
 
             string[] s1 = new string[] { "3", "5", "7", "8", "4", "2", "1", "9", "6" };
 
-            Quicksort(a, 0, a.Length - 1);
-            Quicksort(a1, 0, a1.Length - 1);
-            Quicksort(s1, 0, s1.Length - 1);
+            quicksort(a, 0, a.Length - 1);
+            quicksort(a1, 0, a1.Length - 1);
+            quicksort(s1, 0, s1.Length - 1);
             Console.WriteLine();
         }
     }
